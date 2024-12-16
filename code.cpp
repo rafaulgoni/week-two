@@ -1,22 +1,56 @@
 #include <bits/stdc++.h> 
 using namespace std;
 
-int main() {
-
-    float s, a, k;
-    cin >> s >> a >> k;
-    float ans = (s / a) * k;
-    cout << ans << " Kg" << endl;
-
-    float ansOne = (k / s);
-    cout << ansOne << " Kg" << endl;
-
-    int g = 1000;
-    int ansTwo = (g * ans);
-    cout << ansTwo << " Gram" << endl;
-
-    return 0;
+#include <bits/stdc++.h>
+using namespace std;
+void fun(int *&p){
+p = NULL;
 }
+int main() {
+int val = 10;
+int *ptr = &val;
+fun(ptr);
+cout << ptr << endl;
+return 0;
+}
+// void fun(int * p){
+// p = NULL;
+// }
+// int main(){
+// int val = 10;
+// int *ptr = &val;
+// fun(ptr);
+// cout << *ptr << endl;
+// return 0;
+// }
+// void fun(int *p){
+// *p = 20;
+// }
+// int main(){
+// int val = 10;
+// int *ptr = &val;
+// fun(ptr);
+// cout << *ptr << endl;
+// return 0;
+// }
+
+// this C++ code...
+// int main() {
+
+//     float s, a, k;
+//     cin >> s >> a >> k;
+//     float ans = (s / a) * k;
+//     cout << ans << " Kg" << endl;
+
+//     float ansOne = (k / s);
+//     cout << ansOne << " Kg" << endl;
+
+//     int g = 1000;
+//     int ansTwo = (g * ans);
+//     cout << ansTwo << " Gram" << endl;
+
+//     return 0;
+// }
 
 
 // This C code...
