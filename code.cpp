@@ -1,18 +1,124 @@
 #include <bits/stdc++.h> 
 using namespace std;
 
-#include <bits/stdc++.h>
-using namespace std;
-void fun(int *&p){
-p = NULL;
+class Note
+{
+    public: 
+        int val;
+        Note* next;
+    Note(int val)
+    {
+        this->val = val;
+        this->next = NULL;
+    }
+};
+
+void appendNode(Note*& head, int val) {
+    if (head == NULL) {
+        head = new Note(val);
+    } else {
+        Note* temp = head;
+        while (temp->next != NULL) {
+            temp = temp->next;
+        }
+        temp->next = new Note(val);
+    }
 }
+
+int getSize(Note* head) {
+    int size = 0;
+    Note* temp = head;
+    while (temp != NULL) {
+        size++;
+        temp = temp->next;
+    }
+    return size;
+}
+
 int main() {
-int val = 10;
-int *ptr = &val;
-fun(ptr);
-cout << ptr << endl;
-return 0;
+    Note* head = NULL;
+    int value;
+    while (cin >> value && value != -1) {
+        appendNode(head, value);
+    }
+    cout << getSize(head) << endl;
+    return 0;
 }
+
+
+
+// #include <bits/stdc++.h> 
+// using namespace std;
+
+// struct Node {
+//     int data;
+//     Node* next;
+// };
+
+// Node* createNode(int data) {
+//     Node* newNode = new Node();
+//     newNode->data = data;
+//     newNode->next = nullptr;
+//     return newNode;
+// }
+// class Note
+// {
+//     public: 
+//         int val;
+//         Note* next;
+//     Note(int val)
+//     {
+//         this->val = val;
+//         this->next = NULL;
+//     }
+// };
+
+
+// void appendNode(Node*& head, int data) {
+//     if (head == nullptr) {
+//         head = createNode(data);
+//     } else {
+//         Node* temp = head;
+//         while (temp->next != nullptr) {
+//             temp = temp->next;
+//         }
+//         temp->next = createNode(data);
+//     }
+// }
+
+// int getSize(Node* head) {
+//     int size = 0;
+//     Node* temp = head;
+//     while (temp != nullptr) {
+//         size++;
+//         temp = temp->next;
+//     }
+//     return size;
+// }
+
+// int main() {
+//     Node* head = nullptr;
+//     int value;
+//     while (cin >> value && value != -1) {
+//         appendNode(head, value);
+//     }
+//     cout << getSize(head) << endl;
+//     return 0;
+// }
+
+
+// #include <bits/stdc++.h>
+// using namespace std;
+// void fun(int *&p){
+// p = NULL;
+// }
+// int main() {
+// int val = 10;
+// int *ptr = &val;
+// fun(ptr);
+// cout << ptr << endl;
+// return 0;
+// }
 // void fun(int * p){
 // p = NULL;
 // }
